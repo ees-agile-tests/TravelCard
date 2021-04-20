@@ -1,4 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
 
 namespace TravelCard.Tests
 {
@@ -8,19 +9,13 @@ namespace TravelCard.Tests
         [TestMethod]
         public void DebitAccountTest()
         {
-            /*     User user = new User("Maria");
-                 BankAccount bankAccount = new BankAccount();
+            var bankAccountMock = new Mock<BankAccount>();
+            bankAccountMock.Setup(mock => mock.DebitMoney(100));
 
-                 bankAccount.Bank = 041;
-                 bankAccount.AgencyNumber = 0524;
-                 bankAccount.AccountNumber = 12345;
+            var card = new Card(bankAccountMock.Object);
+            card.DebitAccount(100);
 
-                 Card card = new Card(user, bankAccount);
-
-                 card.DebitAccount(100);
-
-           */
-            //Assert.Fail();
+            bankAccountMock.Verify(mock => mock.DebitMoney(100));
         }
     }
 }
