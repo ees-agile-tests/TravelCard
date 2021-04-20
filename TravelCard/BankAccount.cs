@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TravelCard.Tests
+namespace TravelCard
 {
     public class BankAccount
     {
