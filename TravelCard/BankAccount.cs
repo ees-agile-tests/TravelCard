@@ -8,13 +8,17 @@ namespace TravelCard
  
         public decimal Balance { get; set; }
 
+        public BankAccount()
+        {
+        }
+
         public BankAccount(long accountNumber, decimal balance)
         {
             this.AccountNumber = accountNumber;
             this.Balance = balance;
         }
 
-        public void DebitMoney(decimal debit)
+        public virtual void DebitMoney(decimal debit)
         {
             if (ValidateDebit(debit))
                 this.Balance -= debit;

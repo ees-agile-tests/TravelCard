@@ -9,13 +9,14 @@ namespace TravelCard.Tests
         [TestMethod]
         public void DebitAccountTest()
         {
-            var bankAccountMock = new Mock<BankAccount>();
-            bankAccountMock.Setup(mock => mock.DebitMoney(100));
+            var bankAccountMock = new Mock<BankAccount>(It.IsAny<long>(), It.IsAny<decimal>());
+            bankAccountMock.Setup(x => x.DebitMoney(It.IsAny<decimal>()));
 
-            var card = new Card(bankAccountMock.Object);
-            card.DebitAccount(100);
+            var bankAccount = bankAccountMock.Object;
+            var card = new Card(bankAccount);
+            card.DebitAccount(It.IsAny<decimal>());
 
-            bankAccountMock.Verify(mock => mock.DebitMoney(100));
+            bankAccountMock.Verify(x => x.DebitMoney(It.IsAny<decimal>()));
         }
     }
 }
