@@ -7,15 +7,25 @@ namespace TravelCard.Tests
     public class CardTests
     {
         [TestMethod]
-        public void DebitAccountTest()
+        public void VerifyDebitMoneyTest()
         {
             var bankAccountMock = new Mock<BankAccount>(It.IsAny<long>(), It.IsAny<decimal>());
 
             var bankAccount = bankAccountMock.Object;
             var card = new Card(bankAccount);
-            card.DebitAccount(It.IsAny<decimal>());
+            card.Charge(It.IsAny<Fare>());
 
             bankAccountMock.Verify(x => x.DebitMoney(It.IsAny<decimal>()));
+        }
+    
+        [TestMethod]
+        public void ChargeFareTestSucess()
+        {
+            var bankAccount = new BankAccount(123, 100);
+            var card = new Card(bankAccount);
+
+            card.Charge(Fare.ZonaA_Daily);
+            Assert.AreEqual(card.BankAccount.Balance, 90);
         }
     }
 }

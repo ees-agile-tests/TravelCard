@@ -11,9 +11,9 @@ namespace TravelCard
             BankAccount = bankAccount;
         }
 
-        public void DebitAccount(decimal debit)
+        public void Charge(Fare fare)
         {
-            BankAccount.DebitMoney(debit);
+            BankAccount.DebitMoney(Convert.ToDecimal(fare));
         }
     }
 }
