@@ -20,14 +20,16 @@ namespace TravelCard
 
         public virtual void DebitMoney(decimal debit)
         {
-            if (ValidateDebit(debit))
-                this.Balance -= debit;
+            if (!ValidateDebit(debit))
+                throw new InvalidChargeException("Balance is not enougth");
+            this.Balance -= debit;
         }
 
         public void DepositMoney(decimal desposit)
         {
-            if (ValidateDeposit(desposit))
-                this.Balance += desposit;
+            if (!ValidateDeposit(desposit))
+                throw new InvalidChargeException("Value must be positive");
+            this.Balance += desposit;
         }
 
         private bool ValidateDeposit(decimal deposit)

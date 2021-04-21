@@ -27,5 +27,14 @@ namespace TravelCard.Tests
             card.Charge(Fare.ZonaA_Daily);
             Assert.AreEqual(card.BankAccount.Balance, 90);
         }
+
+        [TestMethod]
+        public void ChargeFareTestFail()
+        {
+            var bankAccount = new BankAccount(123, 0);
+            var card = new Card(bankAccount);
+
+            Assert.ThrowsException<InvalidChargeException>(() => card.Charge(Fare.ZonaA_Daily));
+        }
     }
 }
