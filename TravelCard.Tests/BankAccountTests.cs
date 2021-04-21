@@ -15,7 +15,7 @@ namespace TravelCard.Tests
         }
 
         [TestMethod]
-        public void DebitMoneySucessTest()
+        public void DebitMoneySuccessTest()
         {
             BankAccount bankAccount = new BankAccount(123, 100);
 
