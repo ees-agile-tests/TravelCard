@@ -11,7 +11,7 @@ namespace TravelCard.Tests
             BankAccount bankAccount = new BankAccount(123, 0);
             bankAccount.DepositMoney(100);
 
-            Assert.AreEqual(bankAccount.Balance, 100);
+            Assert.AreEqual(100, bankAccount.Balance);
         }
 
         [TestMethod]
@@ -20,7 +20,7 @@ namespace TravelCard.Tests
             BankAccount bankAccount = new BankAccount(123, 100);
 
             bankAccount.DebitMoney(100);
-            Assert.AreEqual(bankAccount.Balance, 0);
+            Assert.AreEqual(0, bankAccount.Balance);
         }
 
         [TestMethod]
@@ -30,5 +30,6 @@ namespace TravelCard.Tests
 
             Assert.ThrowsException<InvalidChargeException>(() => bankAccount.DebitMoney(100));
         }
+
     }
 }

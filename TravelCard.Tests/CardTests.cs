@@ -19,13 +19,13 @@ namespace TravelCard.Tests
         }
     
         [TestMethod]
-        public void ChargeFareTestSucess()
+        public void ChargeFareTestSuccess()
         {
             var bankAccount = new BankAccount(123, 100);
             var card = new Card(bankAccount);
 
             card.Charge(Fare.ZonaA_Daily);
-            Assert.AreEqual(card.BankAccount.Balance, 90);
+            Assert.AreEqual(90, card.BankAccount.Balance);
         }
 
         [TestMethod]
