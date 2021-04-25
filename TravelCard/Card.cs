@@ -20,10 +20,20 @@ namespace TravelCard
             ExpirationDate = expirationDate;
         }
 
-        public void Authorize(Fare fare)
+        public void AuthorizeDebit(Fare fare)
         {
-            BankAccount.DebitMoney(Convert.ToDecimal(fare));
-            UpdateExpirationDate(fare);
+            var requestDate = DateTime.Now;
+
+            AuthorizeDebit(fare, requestDate);
+        }
+
+        public void AuthorizeDebit(Fare fare, DateTime requestDate)
+        {
+            if (requestDate > ExpirationDate)
+            {
+                BankAccount.DebitMoney(Convert.ToDecimal(fare));
+                UpdateExpirationDate(fare);
+            }
         }
 
         private void UpdateExpirationDate(Fare fare)

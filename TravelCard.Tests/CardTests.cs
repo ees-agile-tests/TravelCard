@@ -13,42 +13,52 @@ namespace TravelCard.Tests
             var bankAccountMock = new Mock<BankAccount>(It.IsAny<long>(), It.IsAny<decimal>());
 
             var bankAccount = bankAccountMock.Object;
-            var card = new Card(bankAccount);
-            card.Authorize(It.IsAny<Fare>());
+            var today = new DateTime(2021, 04, 25);
+            var tomorrow = today.AddDays(1);
+            var card = new Card(bankAccount, today);
+            card.AuthorizeDebit(Fare.ZoneA_Daily, tomorrow);
 
             bankAccountMock.Verify(x => x.DebitMoney(It.IsAny<decimal>()));
         }
 
-        [TestMethod]
-        public void AuthorizeSuccessTest()
-        {
-            var bankAccount = new BankAccount(123, 100);
-            var card = new Card(bankAccount);
-
-            card.Authorize(Fare.ZoneA_Daily);
-            Assert.AreEqual(90, card.BankAccount.Balance);
-        }
-
-        [TestMethod]
-        public void AuthorizeFailTest()
-        {
-            var bankAccount = new BankAccount(123, 0);
-            var card = new Card(bankAccount);
-
-            Assert.ThrowsException<InvalidChargeException>(() => card.Authorize(Fare.ZoneA_Daily));
-        }
-
-        [TestMethod]
-        public void ExpirationDateTest()
+         [TestMethod]
+        public void VerifyNoDebitMoneyTest()
         {
             var bankAccountMock = new Mock<BankAccount>(It.IsAny<long>(), It.IsAny<decimal>());
 
             var bankAccount = bankAccountMock.Object;
-            var initialExpirationDate = Convert.ToDateTime("2021-04-25");
-            var card = new Card(bankAccount, initialExpirationDate);
-            card.Authorize(Fare.ZoneA_Daily);
+            var today = new DateTime(2021, 04, 25);
+            var card = new Card(bankAccount, today);
+            card.AuthorizeDebit(Fare.ZoneA_Daily, today);
 
-            Assert.AreEqual(initialExpirationDate.AddDays(1), card.ExpirationDate);
+            bankAccountMock.VerifyNoOtherCalls();
+        }
+
+        [TestMethod]
+        public void AssertChangeExpirationDateTest()
+        {
+            var bankAccountMock = new Mock<BankAccount>(It.IsAny<long>(), It.IsAny<decimal>());
+
+            var bankAccount = bankAccountMock.Object;
+            var today = new DateTime(2021, 04, 25);
+            var tomorrow = today.AddDays(1);
+            var card = new Card(bankAccount, today);
+            card.AuthorizeDebit(Fare.ZoneA_Daily, tomorrow);
+
+            Assert.AreEqual(tomorrow, card.ExpirationDate);
+        }
+
+        [TestMethod]
+        public void AssertNoChangeExpirationDateTest()
+        {
+            var bankAccountMock = new Mock<BankAccount>(It.IsAny<long>(), It.IsAny<decimal>());
+
+            var bankAccount = bankAccountMock.Object;
+            var today = new DateTime(2021, 04, 25);
+            var card = new Card(bankAccount, today);
+            card.AuthorizeDebit(Fare.ZoneA_Daily, today);
+
+            Assert.AreEqual(today, card.ExpirationDate);
         }
     }
 }
