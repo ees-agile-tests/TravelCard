@@ -8,7 +8,7 @@ namespace TravelCard.Tests
         [TestMethod]
         public void DepositMoneyTest()
         {
-            BankAccount bankAccount = new BankAccount(123, 0);
+            var bankAccount = new BankAccount(123, 0);
             bankAccount.DepositMoney(100);
 
             Assert.AreEqual(100, bankAccount.Balance);
@@ -17,7 +17,7 @@ namespace TravelCard.Tests
         [TestMethod]
         public void DebitMoneySuccessTest()
         {
-            BankAccount bankAccount = new BankAccount(123, 100);
+            var bankAccount = new BankAccount(123, 100);
 
             bankAccount.DebitMoney(100);
             Assert.AreEqual(0, bankAccount.Balance);
@@ -26,7 +26,7 @@ namespace TravelCard.Tests
         [TestMethod]
         public void DebitMoneyFailTest()
         {
-            BankAccount bankAccount = new BankAccount(123, 0);
+            var bankAccount = new BankAccount(123, 0);
 
             Assert.ThrowsException<InvalidChargeException>(() => bankAccount.DebitMoney(100));
         }

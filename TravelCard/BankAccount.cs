@@ -32,7 +32,7 @@ namespace TravelCard
             this.Balance += desposit;
         }
 
-        private bool ValidateDeposit(decimal deposit)
+        private static bool ValidateDeposit(decimal deposit)
         {
             if (deposit < 0)
                 return false;
