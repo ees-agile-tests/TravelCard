@@ -9,12 +9,12 @@ namespace TravelCard
     public enum Fare
     {
         ZoneA_Unique = 6,
-        ZonaA_Daily = 10,
+        ZoneA_Daily = 10,
         ZoneA_Weekly = 30,
         ZoneA_Monthly = 130,
         ZoneB_Unique = 7,
         ZoneB_Daily = 12,
         ZoneB_Weekly = 45,
-        ZoneB_Montly = 170
+        ZoneB_Monthly = 170
     }
 }

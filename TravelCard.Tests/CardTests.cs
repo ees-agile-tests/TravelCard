@@ -17,14 +17,14 @@ namespace TravelCard.Tests
 
             bankAccountMock.Verify(x => x.DebitMoney(It.IsAny<decimal>()));
         }
-    
+
         [TestMethod]
         public void ChargeFareTestSuccess()
         {
             var bankAccount = new BankAccount(123, 100);
             var card = new Card(bankAccount);
 
-            card.Charge(Fare.ZonaA_Daily);
+            card.Charge(Fare.ZoneA_Daily);
             Assert.AreEqual(90, card.BankAccount.Balance);
         }
 
@@ -34,7 +34,19 @@ namespace TravelCard.Tests
             var bankAccount = new BankAccount(123, 0);
             var card = new Card(bankAccount);
 
-            Assert.ThrowsException<InvalidChargeException>(() => card.Charge(Fare.ZonaA_Daily));
+            Assert.ThrowsException<InvalidChargeException>(() => card.Charge(Fare.ZoneA_Daily));
+        }
+
+        [TestMethod]
+        public void ExpirationDateTest()
+        {
+            var bankAccountMock = new Mock<BankAccount>(It.IsAny<long>(), It.IsAny<decimal>());
+
+            var bankAccount = bankAccountMock.Object;
+            var card = new Card(bankAccount);
+            card.Charge(It.IsAny<Fare>());
+
+            bankAccountMock.Verify(x => x.DebitMoney(It.IsAny<decimal>()));
         }
     }
 }

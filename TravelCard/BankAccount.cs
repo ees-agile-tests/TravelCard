@@ -21,7 +21,7 @@ namespace TravelCard
         public virtual void DebitMoney(decimal debit)
         {
             if (!ValidateDebit(debit))
-                throw new InvalidChargeException("Balance is not enougth");
+                throw new InvalidChargeException("Balance is not enough");
             this.Balance -= debit;
         }
 
