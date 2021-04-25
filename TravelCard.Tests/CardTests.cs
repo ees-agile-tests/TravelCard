@@ -1,3 +1,4 @@
+using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 
@@ -43,10 +44,11 @@ namespace TravelCard.Tests
             var bankAccountMock = new Mock<BankAccount>(It.IsAny<long>(), It.IsAny<decimal>());
 
             var bankAccount = bankAccountMock.Object;
-            var card = new Card(bankAccount);
-            card.Charge(It.IsAny<Fare>());
+            var initialExpirationDate = Convert.ToDateTime("2021-04-25");
+            var card = new Card(bankAccount, initialExpirationDate);
+            card.Charge(Fare.ZoneA_Daily);
 
-            bankAccountMock.Verify(x => x.DebitMoney(It.IsAny<decimal>()));
+            Assert.AreEqual(initialExpirationDate.AddDays(1), card.ExpirationDate);
         }
     }
 }
