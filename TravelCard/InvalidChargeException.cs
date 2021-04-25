@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace TravelCard
 {
-    public class InvalidChargeException : Exception
+    public class InvalidDebitException : Exception
     {
-        public InvalidChargeException()
+        public InvalidDebitException()
         {
 
         }
 
-        public InvalidChargeException(string message) : base(message)
+        public InvalidDebitException(string message) : base(message)
         {
 
         }
 
-        public InvalidChargeException(string message, Exception inner) : base(message, inner)
+        public InvalidDebitException(string message, Exception inner) : base(message, inner)
         {
 
         }
