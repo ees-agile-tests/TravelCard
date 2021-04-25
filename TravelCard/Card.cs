@@ -20,7 +20,7 @@ namespace TravelCard
             ExpirationDate = expirationDate;
         }
 
-        public void Charge(Fare fare)
+        public void Authorize(Fare fare)
         {
             BankAccount.DebitMoney(Convert.ToDecimal(fare));
             UpdateExpirationDate(fare);
