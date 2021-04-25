@@ -5,8 +5,8 @@ namespace TravelCard
     public class Card
     {
         public DateTime ExpirationDate { get; set; }
-
         public BankAccount BankAccount { get; set; }
+        public Zone Zone { get; set; }
 
         public Card(BankAccount bankAccount)
         {
