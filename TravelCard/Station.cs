@@ -11,7 +11,7 @@ namespace TravelCard
        public Zone Zone { get; set; }
         public Station(Zone zone)
         {
-            Zone = zone;
+            this.Zone = zone;
         }
 
         public void CheckIn(Card card, Fare fare, DateTime requestDate)
@@ -20,11 +20,8 @@ namespace TravelCard
                 card.AuthorizeDebit(fare);
             else
             {
-                if (Zone != card.Zone)
-                    if (card.Zone == Zone.B)
-                    {
-                        //TO DO approved CheckIn    
-                    }
+                if (this.Zone == Zone.B && card.Zone == Zone.A)
+                    throw new InvalidZoneException();
             }
         }
     }
