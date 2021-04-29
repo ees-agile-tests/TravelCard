@@ -20,7 +20,7 @@ namespace TravelCard
             ExpirationDate = expirationDate;
         }
 
-        public void AuthorizeDebit(Fare fare)
+        public virtual void AuthorizeDebit(Fare fare)
         {
             var requestDate = DateTime.Now;
 
