@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TravelCard.Domain", "TravelCard\TravelCard.Domain.csproj", "{63E07CCF-F596-4AF9-93F9-863A88AC1538}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TravelCard.Domain", "TravelCard.Domain\TravelCard.Domain.csproj", "{63E07CCF-F596-4AF9-93F9-863A88AC1538}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TravelCard.Tests", "TravelCard.Tests\TravelCard.Tests.csproj", "{D7F230F6-D1A7-430F-B3D0-EC7299B71AAB}"
 EndProject

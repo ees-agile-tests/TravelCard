@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TravelCard\TravelCard.Domain.csproj" />
+    <ProjectReference Include="..\TravelCard.Domain\TravelCard.Domain.csproj" />
   </ItemGroup>
 
 </Project>
