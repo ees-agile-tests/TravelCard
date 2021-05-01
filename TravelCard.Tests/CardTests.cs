@@ -1,6 +1,7 @@
 using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
+using TravelCard.Domain;
 
 namespace TravelCard.Tests
 {

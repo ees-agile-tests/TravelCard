@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TravelCard
+namespace TravelCard.Domain
 {
     public class Card
     {
