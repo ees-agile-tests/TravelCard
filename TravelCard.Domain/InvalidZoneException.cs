@@ -2,20 +2,12 @@
 
 namespace TravelCard.Domain
 {
-    public class InvalidZoneException : Exception
+    public class InvalidZoneException : InvalidOperationException
     {
-        public InvalidZoneException()
-        {
+        
+        public InvalidZoneException() { }
 
-        }
-        public InvalidZoneException(string message) : base(message)
-        {
+        public InvalidZoneException(string message) : base(message) { }
 
-        }
-
-        public InvalidZoneException(string message, Exception inner) : base(message, inner)
-        {
-
-        }
     }
 }

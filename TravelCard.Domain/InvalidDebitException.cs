@@ -2,21 +2,12 @@
 
 namespace TravelCard.Domain
 {
-    public class InvalidDebitException : Exception
+    public class InvalidDebitException : InvalidOperationException
     {
-        public InvalidDebitException()
-        {
 
-        }
+        public InvalidDebitException() { }
 
-        public InvalidDebitException(string message) : base(message)
-        {
+        public InvalidDebitException(string message) : base(message) { }
 
-        }
-
-        public InvalidDebitException(string message, Exception inner) : base(message, inner)
-        {
-
-        }
     }
 }
