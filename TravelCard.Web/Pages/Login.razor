@@ -1,23 +1,24 @@
 ﻿@page "/"
+@using System.ComponentModel.DataAnnotations
 @layout LoginLayout
 @inject NavigationManager _navigationManager
 
 <div class="card">
-    <h4 class="card-header">Login</h4>
+    <h4 id="loginHeader" class="card-header">Login</h4>
     <div class="card-body">
         <EditForm Model="@_user" OnValidSubmit="OnValidSubmit">
             <DataAnnotationsValidator/>
             <div class="form-group">
                 <label>Username</label>
-                <InputText @bind-Value="_user.Username" class="form-control"/>
+                <InputText id="usernameInput" @bind-Value="_user.Username" class="form-control"/>
                 <ValidationMessage For="@(() => _user.Username)"/>
             </div>
             <div class="form-group">
                 <label>Password</label>
-                <InputText @bind-Value="_user.Password" type="password" class="form-control"/>
+                <InputText id="passwordInput" @bind-Value="_user.Password" type="password" class="form-control"/>
                 <ValidationMessage For="@(() => _user.Password)"/>
             </div>
-            <button disabled="@_loading" class="btn btn-primary">
+            <button id="loginButton" disabled="@_loading" class="btn btn-primary">
                 @if (_loading)
                 {
                     <span class="spinner-border spinner-border-sm mr-1"></span>
@@ -48,7 +49,9 @@
 
     private class User
     {
+        [Required]
         public string Username { get; set; }
+        [Required]
         public string Password { get; set; }
     }
 
