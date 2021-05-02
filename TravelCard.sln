@@ -5,11 +5,11 @@ VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TravelCard.Domain", "TravelCard.Domain\TravelCard.Domain.csproj", "{63E07CCF-F596-4AF9-93F9-863A88AC1538}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TravelCard.Tests", "TravelCard.Tests\TravelCard.Tests.csproj", "{D7F230F6-D1A7-430F-B3D0-EC7299B71AAB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TravelCard.Domain.Tests", "TravelCard.Domain.Tests\TravelCard.Domain.Tests.csproj", "{D7F230F6-D1A7-430F-B3D0-EC7299B71AAB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelCard.Web", "TravelCard.Web\TravelCard.Web.csproj", "{2FF19A9C-38A8-4377-956C-3D4C5E318F12}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelCard.FunctionalTests", "TravelCard.FunctionalTests\TravelCard.FunctionalTests.csproj", "{B786478A-258A-4FE3-BE4E-28ED1A8BDE79}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelCard.Web.Tests", "TravelCard.Web.Tests\TravelCard.Web.Tests.csproj", "{B786478A-258A-4FE3-BE4E-28ED1A8BDE79}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,9 +1,8 @@
 using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
-using TravelCard.Domain;
 
-namespace TravelCard.Tests
+namespace TravelCard.Domain.Tests
 {
     [TestClass]
     public class CardTests

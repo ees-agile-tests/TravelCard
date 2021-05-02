@@ -3,7 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
 
-namespace TravelCard.FunctionalTests
+namespace TravelCard.Web.Tests
 {
     [TestClass]
     public class LoginTests
