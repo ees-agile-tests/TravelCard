@@ -1,24 +1,24 @@
 ﻿@page "/"
 @layout LoginLayout
-@inject NavigationManager NavigationManager
+@inject NavigationManager _navigationManager
 
 <div class="card">
     <h4 class="card-header">Login</h4>
     <div class="card-body">
-        <EditForm Model="@user" OnValidSubmit="OnValidSubmit">
-            <DataAnnotationsValidator />
+        <EditForm Model="@_user" OnValidSubmit="OnValidSubmit">
+            <DataAnnotationsValidator/>
             <div class="form-group">
                 <label>Username</label>
-                <InputText @bind-Value="user.Username" class="form-control" />
-                <ValidationMessage For="@(() => user.Username)" />
+                <InputText @bind-Value="_user.Username" class="form-control"/>
+                <ValidationMessage For="@(() => _user.Username)"/>
             </div>
             <div class="form-group">
                 <label>Password</label>
-                <InputText @bind-Value="user.Password" type="password" class="form-control" />
-                <ValidationMessage For="@(() => user.Password)" />
+                <InputText @bind-Value="_user.Password" type="password" class="form-control"/>
+                <ValidationMessage For="@(() => _user.Password)"/>
             </div>
-            <button disabled="@loading" class="btn btn-primary">
-                @if (loading)
+            <button disabled="@_loading" class="btn btn-primary">
+                @if (_loading)
                 {
                     <span class="spinner-border spinner-border-sm mr-1"></span>
                 }
@@ -29,20 +29,19 @@
 </div>
 
 @code {
-    private User user = new User();
-    private bool loading;
-    private readonly string homeUrl = "/home";
+    private readonly User _user = new();
+    private bool _loading;
 
     private void OnValidSubmit()
     {
-        loading = true;
+        _loading = true;
         try
         {
-            NavigationManager.NavigateTo(homeUrl);
+            _navigationManager.NavigateTo("/home");
         }
         catch (Exception)
         {
-            loading = false;
+            _loading = false;
             StateHasChanged();
         }
     }
@@ -52,4 +51,5 @@
         public string Username { get; set; }
         public string Password { get; set; }
     }
+
 }
