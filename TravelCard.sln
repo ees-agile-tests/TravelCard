@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TravelCard.Tests", "TravelC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelCard.Web", "TravelCard.Web\TravelCard.Web.csproj", "{2FF19A9C-38A8-4377-956C-3D4C5E318F12}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelCard.FunctionalTests", "TravelCard.FunctionalTests\TravelCard.FunctionalTests.csproj", "{B786478A-258A-4FE3-BE4E-28ED1A8BDE79}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{2FF19A9C-38A8-4377-956C-3D4C5E318F12}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2FF19A9C-38A8-4377-956C-3D4C5E318F12}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2FF19A9C-38A8-4377-956C-3D4C5E318F12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B786478A-258A-4FE3-BE4E-28ED1A8BDE79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B786478A-258A-4FE3-BE4E-28ED1A8BDE79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B786478A-258A-4FE3-BE4E-28ED1A8BDE79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B786478A-258A-4FE3-BE4E-28ED1A8BDE79}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
