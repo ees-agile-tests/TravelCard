@@ -12,11 +12,11 @@ namespace TravelCard.FunctionalTests
         [TestMethod]
         public void Login()
         {
-            IWebDriver driver = new FirefoxDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
+            using IWebDriver browser = new FirefoxDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
+            
+            browser.Navigate().GoToUrl("https://www.google.com");
 
-            driver.Navigate().GoToUrl("https://www.google.com");
-
-            Assert.AreEqual("Google", driver.Title);
+            Assert.AreEqual("Google", browser.Title);
         }
     }
 }
