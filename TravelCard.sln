@@ -7,9 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TravelCard.Domain", "Travel
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TravelCard.Domain.Tests", "TravelCard.Domain.Tests\TravelCard.Domain.Tests.csproj", "{D7F230F6-D1A7-430F-B3D0-EC7299B71AAB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelCard.Web", "TravelCard.Web\TravelCard.Web.csproj", "{2FF19A9C-38A8-4377-956C-3D4C5E318F12}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TravelCard.Web", "TravelCard.Web\TravelCard.Web.csproj", "{2FF19A9C-38A8-4377-956C-3D4C5E318F12}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelCard.Web.Tests", "TravelCard.Web.Tests\TravelCard.Web.Tests.csproj", "{B786478A-258A-4FE3-BE4E-28ED1A8BDE79}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TravelCard.Web.Tests", "TravelCard.Web.Tests\TravelCard.Web.Tests.csproj", "{B786478A-258A-4FE3-BE4E-28ED1A8BDE79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelCard.Specs", "TravelCard.Specs\TravelCard.Specs.csproj", "{3D09DBC1-F286-4DAB-8C38-83EBA2580606}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{B786478A-258A-4FE3-BE4E-28ED1A8BDE79}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B786478A-258A-4FE3-BE4E-28ED1A8BDE79}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B786478A-258A-4FE3-BE4E-28ED1A8BDE79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D09DBC1-F286-4DAB-8C38-83EBA2580606}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D09DBC1-F286-4DAB-8C38-83EBA2580606}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D09DBC1-F286-4DAB-8C38-83EBA2580606}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D09DBC1-F286-4DAB-8C38-83EBA2580606}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
