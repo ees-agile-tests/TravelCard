@@ -25,11 +25,11 @@ namespace TravelCard.Domain
             this.Balance -= debit;
         }
 
-        public void DepositMoney(decimal desposit)
+        public void DepositMoney(decimal deposit)
         {
-            if (!ValidateDeposit(desposit))
+            if (!ValidateDeposit(deposit))
                 throw new InvalidDebitException("Value must be positive");
-            this.Balance += desposit;
+            this.Balance += deposit;
         }
 
         private static bool ValidateDeposit(decimal deposit)
