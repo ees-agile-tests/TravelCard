@@ -7,7 +7,6 @@ namespace TravelCard.Specs.Steps
     [Binding]
     public class BankAccountSteps
     {
-
         private readonly BankAccount _bankAccount = new();
 
         [Given(@"the balance is (.*)")]
@@ -25,15 +24,13 @@ namespace TravelCard.Specs.Steps
         [When(@"debit money (.*)")]
         public void WhenDebitMoney(int value)
         {
-            try
-            {
-                _bankAccount.DebitMoney(value);
-            }
-            catch (InvalidDebitException)
-            {
-
-            }
-           
+            _bankAccount.DebitMoney(value);
+        }
+        
+        [When(@"deposit money (.*)")]
+        public void WhenDepositMoney(int value)
+        {
+            _bankAccount.DepositMoney(value);
         }
         
         [Then(@"the balance should be (.*)")]
@@ -41,11 +38,6 @@ namespace TravelCard.Specs.Steps
         {
             _bankAccount.Balance.Should().Be(balance);
         }
-
-        [Then(@"the user is presented with an error message")]
-        public void ThenTheUserIsPresentedWithAnErrorMessage()
-        {
-            _bankAccount.Balance.Should().Be(0);
-        }
+        
     }
 }
