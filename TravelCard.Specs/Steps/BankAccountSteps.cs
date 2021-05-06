@@ -8,7 +8,7 @@ namespace TravelCard.Specs.Steps
     public class BankAccountSteps
     {
 
-        private readonly BankAccount _bankAccount = new BankAccount();
+        private readonly BankAccount _bankAccount = new();
 
         [Given(@"the balance is (.*)")]
         public void GivenTheBalanceIs(int balance)
